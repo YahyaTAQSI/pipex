@@ -6,12 +6,12 @@
 #    By: ytaqsi <ytaqsi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 12:46:52 by ytaqsi            #+#    #+#              #
-#    Updated: 2023/01/18 17:38:31 by ytaqsi           ###   ########.fr        #
+#    Updated: 2023/01/18 18:50:55 by ytaqsi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-# CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 FRM = rm -rf
 
 NAME = pipex

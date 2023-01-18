@@ -6,12 +6,12 @@
 /*   By: ytaqsi <ytaqsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:41:45 by ytaqsi            #+#    #+#             */
-/*   Updated: 2023/01/18 17:52:34 by ytaqsi           ###   ########.fr       */
+/*   Updated: 2023/01/18 18:51:03 by ytaqsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
-
+ 
 void	ft_error(void)
 {
 	write(2, "Error\n", 6);
