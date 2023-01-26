@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ytaqsi <ytaqsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 14:41:45 by ytaqsi            #+#    #+#             */
-/*   Updated: 2023/01/25 15:52:37 by ytaqsi           ###   ########.fr       */
+/*   Created: 2023/01/20 13:55:37 by ytaqsi            #+#    #+#             */
+/*   Updated: 2023/01/20 13:57:45 by ytaqsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	ft_error(void)
-{
-	write(2, "Error\n", 6);
-	exit(1);
-}
-
-int	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s && s[i])
-		i++;
-	return (i);
-}
-
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strmjoin(char *s1, char *s2)
 {
 	int		is1;
 	int		is2;
@@ -49,38 +33,17 @@ char	*ft_strjoin(char *s1, char *s2)
 	while (s2[is2])
 		p[is1++] = s2[is2++];
 	p[is1] = '\0';
+	free(s1);
+	s1 = NULL;
 	return (p);
 }
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+ssize_t	checkline(char *s)
 {
 	size_t	i;
 
 	i = 0;
-	if (n == 0)
-		return (0);
-	while (s1[i] && s2[i] && i < n - 1 && s1[i] == s2[i])
+	while (s && s[i] && s[i] != '\n')
 		i++;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-}
-
-char	*ft_strdup(const char *s)
-{
-	int		i;
-	char	*p;
-
-	i = 0;
-	while (s[i])
-		i++;
-	p = (char *) malloc((i + 1) * sizeof(char));
-	if (!p)
-		ft_error();
-	i = 0;
-	while (s[i])
-	{
-		p[i] = s[i];
-		i++;
-	}
-	p[i] = '\0';
-	return (p);
+	return (i);
 }

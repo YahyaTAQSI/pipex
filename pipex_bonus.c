@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.c                                            :+:      :+:    :+:   */
+/*   pipex_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ytaqsi <ytaqsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 12:32:30 by ytaqsi            #+#    #+#             */
-/*   Updated: 2023/01/25 13:38:25 by ytaqsi           ###   ########.fr       */
+/*   Updated: 2023/01/25 12:58:48 by ytaqsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ int	main(int ac, char *av[], char **env)
 	t_ppx	ppx;
 
 	ppx.hd = 1;
-	parsing(&ppx, ac, av, env);
+	parsing_bonus(&ppx, ac, av, env);
+	if (!ppx.hd)
+		fill_tmp(&ppx);
 	exe_cmds(ppx, ac, env);
 	freeall(&ppx);
 	return (0);
